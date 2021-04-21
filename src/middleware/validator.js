@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
 const validator = (req, res, next) => {
   if(req.query.name){
-    next()
+    next();
   } else {
-    next('Please enter your name')
+    next('Please enter your name');
   }
-}
+};
 
 module.exports = validator;

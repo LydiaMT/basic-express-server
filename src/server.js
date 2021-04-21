@@ -14,11 +14,11 @@ app.use(logger);
 
 app.get('/hello', (req, res) => {
   res.send('hello world!');
-})
+});
 
 app.get('/person', validator, (req, res) => {
   res.send({ name: req.query.name });
-})
+});
 
 app.use('*', notFound);
 app.use(errors);
@@ -30,4 +30,4 @@ module.exports = {
       console.log(`server is up on ${port}`);
     });
   }
-}
+};

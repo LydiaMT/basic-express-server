@@ -1,7 +1,6 @@
-'use strict'
+'use strict';
 
 const validator = require('../src/middleware/validator');
-const supertest = require('supertest');
 
 describe('---------- VALIDATOR TEST ----------' , () => {
   let req = {query:{}}; //query is an object inside of request
@@ -9,7 +8,7 @@ describe('---------- VALIDATOR TEST ----------' , () => {
   let next = jest.fn(); // spy on next method
 
   it('a name was entered', () => {
-    validator({query:{name:"Lydia"}}, res, next);
+    validator({query:{name:'Lydia'}}, res, next);
     expect(next).toHaveBeenCalledWith();
   });
 

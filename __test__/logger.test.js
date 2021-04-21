@@ -1,8 +1,6 @@
-'use strict'
+'use strict';
 
 const logger = require('../src/middleware/logger');
-const supertest = require('supertest');
-const mockRequest = supertest(logger);
 
 describe('---------- LOGGER TEST ----------' , () => {
   let consoleSpy; //needed when console logging
