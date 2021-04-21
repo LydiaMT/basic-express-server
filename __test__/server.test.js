@@ -5,14 +5,15 @@ const supertest = require('supertest');
 const mockRequest = supertest(server);
 
 describe('---------- SERVER TEST ----------' , () => {
+
   it('should respond with a 404 on not found', async () => {
-    return mockRequest.get('/no-thing').then(data => {
+    mockRequest.get('/no-thing').then(data => {
       expect(data.status).toBe(404);
     });
   });
 
   it('should respond with a 500 on an error', () => {
-    return mockRequest.get('/person').then(data => {
+    mockRequest.get('/person').then(data => {
       expect(data.status).toBe(500);
     });
   });
@@ -23,4 +24,5 @@ describe('---------- SERVER TEST ----------' , () => {
     expect(response.text).toBe('hello world!'); // test your output
     // HINT: test for shape/type of data
   });
+
 });
